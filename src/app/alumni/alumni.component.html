@@ -1,0 +1,39 @@
+<app-nav [title]="title"></app-nav>
+<div>
+    <div>
+  <button data-target="model1" class="btn modal-trigger" onclick="addNewALumni()">add new Alumni</button>     
+    </div>
+    <div *ngFor="let data of dataTemp; let i =index">
+   <div>
+    <img src={{data.img}}>
+   </div>
+   <div>
+    {{data.name}}
+   </div>
+   <div>
+    {{data.lid}}
+   </div>
+   <div>
+    {{data.yop}}
+   </div> 
+</div>
+</div>
+<div id="model1" class="modal">
+    <div class="modal-content">
+        <label for=""></label>
+        <input type="file" (change)="selectImg($event)">
+        <button (click)="uploadImg()">upload Image</button>
+        <form [formGroup]="profileForm">
+            <label for="name">Name</label>
+            <input type="text" formControlName="name">
+            <label for="email">Email</label>
+            <input type="text" formControlName="email">
+            <label for="yop"></label>
+            <input type="date" formControlName="yop">
+            <label for="lid"></label>
+            <input type="text" formControlName="lid">
+        </form>
+        <button onclick="saveData()">save Profile</button>
+    </div>
+
+</div>
