@@ -1,0 +1,22 @@
+.navbar {
+    /* border: 1px solid red; */
+    position: fixed;
+    display: flex;
+    height: 8vh;
+    width: 100%;
+    justify-content: space-around;
+    background-color: #8E90B2;
+}
+.logo img {
+    width: 2rem;
+}
+.nav-items {
+    display: flex;
+}
+.navbar li {
+    list-style: none;
+    margin: 1rem;
+    /* border: 1px solid red; */
+    padding: 0rem 0.6rem 0rem 0.6rem;
+    font-weight: 600;
+}

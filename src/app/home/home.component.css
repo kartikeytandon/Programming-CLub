@@ -4,25 +4,7 @@
     height: 100vh;
     background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
 }
-.navbar {
-    /* border: 1px solid red; */
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-}
-.logo img {
-    width: 2rem;
-}
-.nav-items {
-    display: flex;
-}
-.navbar li {
-    list-style: none;
-    margin: 1rem;
-    /* border: 1px solid red; */
-    padding: 0rem 0.6rem 0rem 0.6rem;
-    font-weight: 600;
-}
+
 a {
     text-decoration: none;
     color: black;
