@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo:wght@500&family=Inter:wght@500&family=Montserrat:wght@500&family=Open+Sans:wght@500&display=swap');
+
+.home {
+    height: 100vh;
+    background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+.navbar {
+    /* border: 1px solid red; */
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.logo img {
+    width: 2rem;
+}
+.nav-items {
+    display: flex;
+}
+.navbar li {
+    list-style: none;
+    margin: 1rem;
+    /* border: 1px solid red; */
+    padding: 0rem 0.6rem 0rem 0.6rem;
+    font-weight: 600;
+}
+a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.1rem;
+    color: rgb(90, 90, 90);
+}
+
+.pc-logo {
+    /* border: 1px solid red; */
+    width: fit-content;
+    margin: auto;
+    position: relative;
+    top: 8rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.pc-logo img {
+    width: 10rem;
+    margin: auto;
+}
+.pc-head {
+    font-size: 2rem;
+    font-weight: 700;
+    color: rgb(90, 90, 90);
+}
+#slogan {
+    color: rgb(90, 90, 90);
+}
+
+
+body {
+    background:#0b1d2a;
+  }
+  
+  .arrows {
+      width: 60px;
+      height: 72px;
+      position: absolute;
+      left: 50%;
+      margin-left: -30px;
+      bottom: 20px;
+  }
+  
+  .arrows path {
+      stroke: #2994D1;
+      fill: transparent;
+      stroke-width: 1px;	
+      animation: arrow 2s infinite;
+      -webkit-animation: arrow 2s infinite; 
+  }
+  
+  @keyframes arrow
+  {
+  0% {opacity:0}
+  40% {opacity:1}
+  80% {opacity:0}
+  100% {opacity:0}
+  }
+  
+  @-webkit-keyframes arrow /*Safari and Chrome*/
+  {
+  0% {opacity:0}
+  40% {opacity:1}
+  80% {opacity:0}
+  100% {opacity:0}
+  }
+  
+  .arrows path.a1 {
+      animation-delay:-1s;
+      -webkit-animation-delay:-1s; /* Safari 和 Chrome */
+  }
+  
+  .arrows path.a2 {
+      animation-delay:-0.5s;
+      -webkit-animation-delay:-0.5s; /* Safari 和 Chrome */
+  }
+  
+  .arrows path.a3 {	
+      animation-delay:0s;
+      -webkit-animation-delay:0s; /* Safari 和 Chrome */
+  }
+
+
+
+/* About Page */
+
+.aboutUs {
+    text-align: center;
+    position: relative;
+    top: 1.5rem;
+}
+.about-head p {
+    font-size: 3rem;
+    color: rgb(90, 90, 90);
+}
+.about-content {
+    padding: 2rem;
+    margin: 0 5rem 0 5rem;
+}
+
+
+
+  @media(max-width: 550px) {
+    .navbar {
+        display: none;
+    }
+  }
+
+
