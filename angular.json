@@ -94,11 +94,25 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "pcWeb:build:production",
+            "firebaseProject": "programming-club-dc353",
+            "firebaseHostingSite": "programming-club-dc353"
+          }
         }
       }
     }
   },
   "cli": {
+<<<<<<< HEAD
     "analytics": "b2bff940-aa4d-43a6-b0bf-729d4fc0f3f4"
+=======
+    "analytics": "2f10b6a9-0018-44a8-bb79-e55235347654"
+>>>>>>> 86d45012c94e4b4925282b209e33708df0c81144
   }
 }

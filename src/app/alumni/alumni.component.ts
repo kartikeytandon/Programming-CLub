@@ -5,6 +5,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { timestamp } from 'rxjs';
 import { HotToastService } from '@ngneat/hot-toast';
 import { getDownloadURL, ref, Storage, uploadBytes, deleteObject } from '@angular/fire/storage';
+declare function Init(): any;
 @Component({
   selector: 'app-alumni',
   templateUrl: './alumni.component.html',
@@ -19,19 +20,21 @@ export class AlumniComponent implements OnInit {
   ) { }
 
  async ngOnInit(): Promise<void>{
+  Init();
   this.getData();
   }
 
-  title:string="alumni";
+
 //getting all the data in dataTemp var  from database
 
 dataTemp:alumni[]=[];
 
 async getData(){
-  await this.service.getDocs("Alumni").then((doc )=>{
-    var temp=doc as unknown as alumni;
-    this.dataTemp.push(temp); 
+  const snapshot=await this.service.getDocs("alumni");
+  snapshot.forEach((doc)=>{
+  this.dataTemp.push(doc.data() as alumni ); 
   })
+
 }
 
 //creating a form for taking inputs from user like name,email linked in,yop
@@ -75,9 +78,15 @@ this.toast.success('image uploaded sucessfully');
 
 //saving the final data
 async saveData(){ 
+  var alert=this.toast.success('saving data');
   var obj=this.profileForm.value;
   obj.img=this.url;
-  await this.service.addingDocument(obj,'alumni');
+  await this.service.addingDocument(obj,'alumni').then(()=>{
+  alert.close();
+  }).catch((err)=>{
+   console.log(err);
+   var error=this.toast.error('could not save');
+   error.close(); 
+  });
 }
-
 }

@@ -1,12 +1,15 @@
 import { Injectable } from '@angular/core';
-import { getDocs, getFirestore,collection, addDoc } from '@angular/fire/firestore';
+import { getDocs, getFirestore,collection, addDoc, } from '@angular/fire/firestore';
+import {Auth} from '@angular/fire/auth';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
-  constructor() { }
+  constructor(
+    private auth:Auth
+  ) { }
   db=getFirestore();
 
   //getting all documents

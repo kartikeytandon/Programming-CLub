@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "programming-club-dc353": {
+      "hosting": {
+        "pcWeb": [
+          "programming-club-dc353"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "programming-club-dc353"
+  }
+}
