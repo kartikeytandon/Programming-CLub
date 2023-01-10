@@ -2,10 +2,11 @@
     /* border: 1px solid red; */
     position: fixed;
     display: flex;
-    height: 8vh;
+    height: 6vh;
     width: 100%;
     justify-content: space-around;
     background-color: #8E90B2;
+    z-index: 999;
 }
 .logo img {
     width: 2rem;

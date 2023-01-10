@@ -94,6 +94,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "pcWeb:build:production",
+            "firebaseProject": "programming-club-dc353",
+            "firebaseHostingSite": "programming-club-dc353"
+          }
         }
       }
     }
