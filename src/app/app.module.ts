@@ -15,6 +15,7 @@ import{provideFirestore,getFirestore} from '@angular/fire/firestore';
 import { FIREBASE_OPTIONS } from '@angular/fire/compat';
 import { AlumniComponent } from './alumni/alumni.component';
 import { getStorage, provideStorage } from '@angular/fire/storage';
+import { PostComponent } from './post/post.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { getStorage, provideStorage } from '@angular/fire/storage';
     HomeComponent,
     LoginComponent,
     NavComponent,
-    AlumniComponent
+    AlumniComponent,
+    PostComponent
   ],
   imports: [
     BrowserModule,
