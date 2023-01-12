@@ -1,14 +1,27 @@
 <app-nav [title]="title"></app-nav>
-<div class="sign-in-wrapper">
-    <div class="sign-in-div shadow rounded">
-        <div class="row">
-            <div class="col s12">
-                <img  class="responsive-img"> <br>
-                <br>
-            </div>
-            <div class="col s12" style="padding: 18px;">
-                <button (click)="SignIn()" class="btn">Sign in</button>
-            </div>
+<body>
+<div class="container">
+    <div class="login-left">
+        <div class="login-header">
+            <h1>Welcome to <br> Programming Club</h1>
+            <p>The sole club in AKGEC dedicated to Competitive Programming.<br>This website is dedicated for Programming Club.</p>
         </div>
+        <button (click)="SignIn()" style="border:none; background-color: #ffffff;">
+        <form class="login-form" autocomplete="off">
+            <div class="login-form-footer">
+                <a href="#">
+                    <img width="30"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSK5q0FP74VV9wbfwP378_7kj7iDomHuKrxkXsxDdUT28V9dlVMNUe-EMzaLwaFhneeuZI&usqp=CAU">
+                    Google Login
+                </a>
+            </div>
+        </form>
+    </button>
+    </div>
+    
+    <div class="login-right">
+        <img src="/assets/pc-icon.png" alt="not">
     </div>
 </div>
+
+</body>

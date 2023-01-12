@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;600&display=swap");
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background: linear-gradient(45deg, #ededed, #f32121);
+  padding: 40px;
+}
+
+.container {
+    margin-top: 30px;
+  min-height: calc(100vh - 80px);
+  display: grid;
+  grid-template-columns: 50% 50%;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.login-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 100px;
+  background-color: white;
+}
+
+.login-right {
+  background-color: #eeeeee;
+  display: flex;
+  justify-content: center;
+}
+.login-right{
+    background-color: #eeeeee;
+}
+
+.login-right img {
+  width: 80%;
+  height: 65%;
+  margin-top: 95px;
+}
+
+.login-header {
+  margin-bottom: 50px;
+}
+.login-header h1 {
+  font-size: 40px;
+  margin-bottom: 35px;
+}
+.login-header p {
+  opacity: 0.7;
+}
+.login-form {
+  width: 300px;
+}
+
+.login-form-footer a {
+  flex: 6;
+  border-radius: 100px;
+  padding: 0.6rem;
+  justify-content: center;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  color: black;
+  text-decoration: none;
+}
+.login-form-footer a:hover {
+  background-color: #eeeeee;
+}
+
+/* Responsive */
+@media (max-width: 1350px) {
+  .login-left {
+    padding: 50px !important;
+  }
+  .login-form {
+    width: 100%;
+  }
+  .login-form-footer {
+    flex-direction: column;
+  }
+}
+@media (max-width: 768px) {
+  body {
+    padding: 20px;
+  }
+  .container {
+    grid-template-columns: auto;
+  }
+  .login-right {
+    display:none;
+  }
+}
