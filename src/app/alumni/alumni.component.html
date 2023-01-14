@@ -5,36 +5,33 @@
       add new Alumni
     </button>
   </div>
-  <div class="card" *ngFor="let data of dataTemp; let i = index">
-    <div class="card-info">
-    <div class="card-avatar">
-      <img src="{{ data.img }}" />
+  <div class="alldata">
+    <div class="card" *ngFor="let data of dataTemp; let i = index">
+      <div class="card-info">
+        <div class="card-avatar">
+          <img src="{{ data.img }}" />
+        </div>
+        <div class="card-title">
+          {{ data.name }}
+        </div>
+        <div class="card-subtitle">
+          {{ data.yop }}
+        </div>
+      </div>
+      <ul class="card-social">
+        <li class="card-social__item">
+          <a href="{{ data.email }}" target="_blank">
+            <img src=".\assets\60543.png" />
+          </a>
+        </li>
+        <li class="card-social__item">
+          <a href="{{ data.lid }}" target="_blank">
+            <img src=".\assets\linkedin.png" />
+          </a>
+        </li>
+      </ul>
     </div>
-    <div class="card-title">
-      {{ data.name }}
-    </div>
-    <div class="card-subtitle">
-      {{ data.yop }}
-    </div>
-    </div>
-    <ul class="card-social">
-    <li class="card-social__item">
-      <a href="{{data.email}}" target="_blank">
-        <img src=".\assets\60543.png">
-      </a>
-    </li>
-  <li class="card-social__item">
-    <a href="{{data.email}}" target="_blank">
-      <img src=".\assets\60543.png">
-    </a>
-  </li>
-<li class="card-social__item">
-  <a href="{{data.lid}}" target="_blank">
-    <img src=".\assets\linkedin.png">
-  </a>
-</li>
-</ul>
-</div>
+  </div>
 </div>
 <div id="model1" class="modal">
   <div class="modal-content">

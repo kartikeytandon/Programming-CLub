@@ -5,11 +5,13 @@
 .btn button{
   margin-top: 60px;
 }
-.card {
+.alldata{
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   flex-wrap: wrap;
-  margin: 100px;
+  margin-top: 100px;
+}
+.card {
   width: 205px;
   height: 290px;
   background: rgb(38 166 154);
@@ -42,7 +44,7 @@
  .card-social {
   transform: translateY(200%);
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   width: 100%;
   opacity: 0;
   transition: transform .2s ease, opacity .2s ease;
@@ -53,16 +55,7 @@
  }
  .card-social__item img{
   width: 15px;
- }
- .card-social__item svg {
-  display: block;
-  height: 18px;
-  width: 18px;
-  fill: #000000;
-  cursor: pointer;
-  transition: fill 0.2s ease ,transform 0.2s ease;
- }
- 
+ } 
  /*Text*/
  .card-title {
   color: #fff;
