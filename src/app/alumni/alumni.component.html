@@ -1,42 +1,53 @@
-
+<app-nav></app-nav>
 <div>
-    <div>
-  <button data-target="model1" class="btn modal-trigger" >add new Alumni</button>     
+  <div class="btn">
+    <button data-target="model1" class="btn modal-trigger">
+      add new Alumni
+    </button>
+  </div>
+  <div class="alldata">
+    <div class="card" *ngFor="let data of dataTemp; let i = index">
+      <div class="card-info">
+        <div class="card-avatar">
+          <img src="{{ data.img }}" />
+        </div>
+        <div class="card-title">
+          {{ data.name }}
+        </div>
+        <div class="card-subtitle">
+          {{ data.yop }}
+        </div>
+      </div>
+      <ul class="card-social">
+        <li class="card-social__item">
+          <a href="{{ data.email }}" target="_blank">
+            <img src=".\assets\60543.png" />
+          </a>
+        </li>
+        <li class="card-social__item">
+          <a href="{{ data.lid }}" target="_blank">
+            <img src=".\assets\linkedin.png" />
+          </a>
+        </li>
+      </ul>
     </div>
-    <div *ngFor="let data of dataTemp; let i =index">
-   <div>
-    <img src={{data.img}}>
-   </div>
-   <div>
-    {{data.name}}
-   </div>
-   <div>
-    {{data.lid}}
-   </div>
-   <div>
-    {{data.email}}
-   </div>
-   <div>
-    {{data.yop}}
-   </div> 
-</div>
+  </div>
 </div>
 <div id="model1" class="modal">
-    <div class="modal-content">
-        <label for="image">select image</label>
-        <input type="file" (change)="selectImg($event)">
-        <button (click)="uploadImg()">upload Image</button>
-        <form [formGroup]="profileForm">
-            <label for="name">Name</label>
-            <input type="text" formControlName="name">
-            <label for="email">Email id</label>
-            <input type="text" formControlName="email">
-            <label for="yop">Year of Passing</label>
-            <input type="date" formControlName="yop">
-            <label for="lid">Linked id</label>
-            <input type="text" formControlName="lid">
-        </form>
-        <button (click)="saveData()">save Profile</button>
-    </div>
-
+  <div class="modal-content">
+    <label for="image">select image</label>
+    <input type="file" (change)="selectImg($event)" />
+    <button (click)="uploadImg()">upload Image</button>
+    <form [formGroup]="profileForm">
+      <label for="name">Name</label>
+      <input type="text" formControlName="name" />
+      <label for="email">Email id</label>
+      <input type="text" formControlName="email" />
+      <label for="yop">Year of Passing</label>
+      <input type="date" formControlName="yop" />
+      <label for="lid">Linked id</label>
+      <input type="text" formControlName="lid" />
+    </form>
+    <button (click)="saveData()">save Profile</button>
+  </div>
 </div>
