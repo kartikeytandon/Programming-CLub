@@ -1,1 +1,26 @@
-<p>post works!</p>
+<div>
+    <button data-target="model1" class="btn modal-trigger" >add new Post</button>
+    <div *ngFor="let doc of tempData;let i=index">
+        <div>
+            {{doc.title}}
+        </div>
+        <div>
+            {{doc.content}}
+        </div>
+        <img src={{doc.img}}>
+    </div>
+</div>
+<div id="model1" class="modal">
+ <div class="modal-content">
+    <label for="image">select image</label>
+    <input type="file" (change)="selectImage($event)">
+    <button class="btn" (click)="uploadImage()">upload Image</button>
+    <form [formGroup]="TempForm">
+        <label for="name">Title</label>
+        <input type="text" formControlName="title">
+        <label for="email">content</label>
+        <textarea type="text" formControlName="content"></textarea>
+    </form>
+    <button class="btn" (click)="createPost()"> Post event</button>
+ </div>
+</div>

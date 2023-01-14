@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { getDocs, getFirestore,collection, addDoc, } from '@angular/fire/firestore';
 import {Auth} from '@angular/fire/auth';
+import { deleteDoc, doc } from '@firebase/firestore';
 
 @Injectable({
   providedIn: 'root'
@@ -33,6 +34,13 @@ export class UserService {
     })
   }
   
-
-  
+//deleting any specific doc
+   async deleteDoc(collection:string,id:string){
+    await deleteDoc(doc(this.db,collection,id)).then(()=>{
+     console.log("deleted sucessfully");
+    })
+    .catch((err)=>{
+     console.log(err);
+    })
+   }  
 }
