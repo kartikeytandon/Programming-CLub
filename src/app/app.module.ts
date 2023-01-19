@@ -16,6 +16,7 @@ import { FIREBASE_OPTIONS } from '@angular/fire/compat';
 import { AlumniComponent } from './alumni/alumni.component';
 import { getStorage, provideStorage } from '@angular/fire/storage';
 import { PostComponent } from './post/post.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { PostComponent } from './post/post.component';
     LoginComponent,
     NavComponent,
     AlumniComponent,
-    PostComponent
+    PostComponent,
+    ContactUsComponent
   ],
   imports: [
     BrowserModule,
