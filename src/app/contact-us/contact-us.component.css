@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo:wght@500&family=Inter:wght@500&family=Montserrat:wght@500&family=Open+Sans:wght@500&display=swap');
+
+/* *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'Montserrat', sans-serif;
+} */
+.contactUs {
+    background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    height: 40vh;
+}
+.sayHi {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 8rem;
+}
+.sayHi p {
+    /* border: 1px solid red; */
+    width: 28rem;
+    text-align: center;
+    position: relative;
+    top: 1rem;
+}
+.contactBox {
+    background-color: white;
+    box-shadow: 3px 3px 5px 6px #ccc;
+    display: flex;
+    width: 45rem;
+    margin: auto;
+    position: relative;
+    bottom: 4rem;
+    padding: 2rem;
+}
+.leftBox {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-right: 1px solid rgb(224, 224, 224);
+}
+#pcIcon {
+    margin: auto;
+}
+#pcIcon img {
+    width: 9rem;
+}
+.contactchild{
+    display: flex;
+    align-items: center;
+    width: 15rem;
+    margin: auto;
+    gap: 0.5rem;
+    padding: 0.4rem;
+}
+.contactchild img {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+.contactchild span {
+    font-size: 0.8rem;
+}
+.rightBox {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+form {
+    display: flex;
+    flex-direction: column;
+}
+form input {
+    align-items: center;
+    height: 2.5rem;
+}
+.form-input {
+    margin: 0.3rem 0 0.3rem 0;
+    padding: 0.2rem 0 0 0.8rem;
+    /* background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); */
+    outline: none;
+}
+form button {
+    border: none;
+    padding: 0.6rem;
+    background-image: linear-gradient(135deg, #b2b2b2 0%, #c3cfe2 100%);
+    cursor: pointer;
+    border-radius: 0.4rem;
+}
