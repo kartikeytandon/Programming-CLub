@@ -54,7 +54,7 @@ profileForm=new FormGroup(
 file:any={};
 Name:string="";
 
-//getting the img
+//getting the img+
 async selectImg($event:any){
   this.file=$event.target.files[0];
   this.Name=$event.target.files[0].name;

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-contact-us',
@@ -11,5 +12,18 @@ export class ContactUsComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  //form created for storing data
+  resForm=new FormGroup({
+     name:new FormControl(''),
+     email:new FormControl(''),
+     message:new FormControl(''),
+     phone:new FormControl(0) 
+  })
+
+ async saveData(){
+  const data=this.resForm.value 
+ }
+
 
 }

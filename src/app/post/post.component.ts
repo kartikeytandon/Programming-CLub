@@ -4,7 +4,7 @@ import { Post } from '../models/post';
 import { HotToastService } from '@ngneat/hot-toast';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
-import { Storage } from '@angular/fire/storage';
+import { Storage, deleteObject } from '@angular/fire/storage';
 declare function Init(): any;
 @Component({
   selector: 'app-post',
@@ -33,19 +33,22 @@ export class PostComponent implements OnInit {
   var snapshots=this.services.getDocs('Posts');
   (await snapshots).forEach((doc)=>{
     var temp=doc.data() as Post;
+    temp.id=doc.id;
     this.tempData.push(temp);
   })
   }
 
   //deleting any particular post
-  async deletePost(id:string){
+  async deletePost(id:string,name:string){
     var alert=this.toast.loading('deleting');
-    alert.close(); 
-    this.services.deleteDoc('Posts',id).then(()=>{
-    var alert=this.toast.success('deleted sucessfully');
-    alert.close(); 
-    }).catch((err)=>{
-    this.toast.error('error occured'); 
+    var storageRef=ref(this.storage,'postImages/'+name);
+    await deleteObject(storageRef).then(()=>{
+      this.services.deleteDoc('Posts',id).then(()=>{
+        var alert=this.toast.success('deleted Sucessfully');
+        alert.close();
+      }).catch((err)=>{
+        this.toast.error(err);
+      })
     })
   }
    
@@ -56,10 +59,17 @@ file:any={};
 Name:string="";
 //getting the img
 async selectImage($event:any){
+  if(this.TempForm.value.content?.length==0 || this.TempForm.value.title?.length==0){
+    this.toast.error("please fill the title and content first");
+}
+else{
+  this.toast.success("image selected");
   this.file=$event.target.files[0];
   this.Name=$event.target.files[0].name;
 }
+}
 
+//creating form for getting information about post 
 TempForm=new FormGroup(
   {
    title:new FormControl(''),
@@ -68,9 +78,17 @@ TempForm=new FormGroup(
   }
 )
 url:string="";
+canShow:boolean=false;
+
+//uploading image that has been selected
+
 async uploadImage(){
-  var temp=this.toast.loading("uploading image");
-  const storageRef=ref(this.storage,"postImages/"+this.Name);
+  if(this.TempForm.value.title?.length==0 || this.TempForm.value.content?.length==0){
+      this.toast.error("please fill the title and content first");
+  }
+
+  else {var temp=this.toast.loading("uploading image");
+  const storageRef=ref(this.storage,"postImages/"+this.TempForm.value.title);
   await uploadBytes(storageRef,this.file).then((snapshot)=>{
     temp.close();
     this.toast.success("sucessfully added image");
@@ -79,9 +97,15 @@ async uploadImage(){
     })
   })
 }
+}
 
 //saving final data
+
 async createPost(){
+if(this.TempForm.value.title?.length==0 ||this.TempForm.value.content?.length==0){
+ this.toast.error("content and title must be there"); 
+}
+
 var alert=this.toast.loading("adding post");  
 var data=this.TempForm.value;
 data.img=this.url;

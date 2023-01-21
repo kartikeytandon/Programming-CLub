@@ -8,13 +8,17 @@
             {{doc.content}}
         </div>
         <img src={{doc.img}}>
+        <button (click)="deletePost(doc.id,doc.title)"></button>
     </div>
+    
 </div>
 <div id="model1" class="modal">
  <div class="modal-content">
-    <label for="image">select image</label>
-    <input type="file" (change)="selectImage($event)">
-    <button class="btn" (click)="uploadImage()">upload Image</button>
+    
+        <label for="image">select image</label>
+        <input type="file" (change)="selectImage($event)">
+        <button class="btn" (click)="uploadImage()">upload Image</button>   
+    
     <form [formGroup]="TempForm">
         <label for="name">Title</label>
         <input type="text" formControlName="title">
