@@ -1,30 +1,26 @@
-<div>
-    <button data-target="model1" class="btn modal-trigger" >add new Post</button>
-    <div *ngFor="let doc of tempData;let i=index">
-        <div>
-            {{doc.title}}
+<div> 
+    <h3>Upcoming Events</h3>
+    <!-- <button data-target="model1" class="btn modal-trigger" >add new Post</button> -->
+        <div *ngFor="let doc of tempData;let i=index" class="postWrapper">
+            <img src={{doc.img}}>
+            <div class="content">
+                <h4 class="postTitle">{{doc.content}}</h4>
+                <p class="postContent">{{doc.content}}</p>
+            </div>
         </div>
-        <div>
-            {{doc.content}}
-        </div>
-        <img src={{doc.img}}>
-        <button (click)="deletePost(doc.id,doc.title)"></button>
     </div>
-    
-</div>
-<div id="model1" class="modal">
- <div class="modal-content">
-    
+    <div id="model1" class="modal">
+     <div class="modal-content">
         <label for="image">select image</label>
         <input type="file" (change)="selectImage($event)">
-        <button class="btn" (click)="uploadImage()">upload Image</button>   
+        <button class="btn" (click)="uploadImage()">upload Image</button>
+        <form [formGroup]="TempForm">
+            <label for="name">Title</label>
+            <input type="text" formControlName="title"> 
+            <label for="email">content</label>
+            <textarea type="text" formControlName="content"></textarea>
+        </form>
+        <button class="btn" (click)="createPost()"> Post event</button>
+     </div>
+    </div>
     
-    <form [formGroup]="TempForm">
-        <label for="name">Title</label>
-        <input type="text" formControlName="title">
-        <label for="email">content</label>
-        <textarea type="text" formControlName="content"></textarea>
-    </form>
-    <button class="btn" (click)="createPost()"> Post event</button>
- </div>
-</div>
