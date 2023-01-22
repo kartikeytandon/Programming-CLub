@@ -1,12 +1,16 @@
 <div> 
     <h3>Upcoming Events</h3>
-    <!-- <button data-target="model1" class="btn modal-trigger" >add new Post</button> -->
+    
+    <button data-target="model1" class="btn modal-trigger" >add new Post</button>
         <div *ngFor="let doc of tempData;let i=index" class="postWrapper">
             <img src={{doc.img}}>
             <div class="content">
-                <h4 class="postTitle">{{doc.content}}</h4>
+                <h4 class="postTitle">{{doc.title}}</h4>
                 <p class="postContent">{{doc.content}}</p>
+                <h4>{{doc.date}}</h4>
             </div>
+            
+            <button class="btn" (click)="deletePost(doc.id,doc.title)">Delete Post</button>
         </div>
     </div>
     <div id="model1" class="modal">
@@ -19,8 +23,11 @@
             <input type="text" formControlName="title"> 
             <label for="email">content</label>
             <textarea type="text" formControlName="content"></textarea>
+            <label for="date">Select Date</label>
+            <input type="date" formControlName="date">
+            <button class="btn" (click)="createPost()"> Post event</button>
         </form>
-        <button class="btn" (click)="createPost()"> Post event</button>
+        
      </div>
     </div>
     

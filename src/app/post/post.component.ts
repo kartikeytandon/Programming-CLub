@@ -74,7 +74,8 @@ TempForm=new FormGroup(
   {
    title:new FormControl(''),
    content:new FormControl(''),
-   img:new FormControl('')
+   img:new FormControl(''),
+   date:new FormControl(new Date())
   }
 )
 url:string="";
@@ -105,7 +106,7 @@ async createPost(){
 if(this.TempForm.value.title?.length==0 ||this.TempForm.value.content?.length==0){
  this.toast.error("content and title must be there"); 
 }
-
+else{
 var alert=this.toast.loading("adding post");  
 var data=this.TempForm.value;
 data.img=this.url;
@@ -116,6 +117,7 @@ this.services.addingDocument(data,"Posts").then(()=>{
   console.log(err);
   this.toast.error("some error occured");
 })
+}
 }
 
 }
