@@ -1,7 +1,9 @@
 <div> 
-    <h3>Upcoming Events</h3>
+    <app-nav></app-nav>
     
-    <button data-target="model1" class="btn modal-trigger" >add new Post</button>
+    <div id="new-post">
+        <button data-target="model1" class="btn modal-trigger" >add new Post</button>
+    </div>
         <div *ngFor="let doc of tempData;let i=index" class="postWrapper">
             <img src={{doc.img}}>
             <div class="content">
@@ -29,4 +31,3 @@
         
      </div>
     </div>
-    
