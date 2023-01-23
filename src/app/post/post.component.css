@@ -24,6 +24,10 @@ h3 {
     /* margin-left: 10rem; */
     margin-right: 0rem;
 }
+#new-post {
+    width: fit-content;
+    margin: auto;
+}
 
 @media(max-width: 824px) {
     .postWrapper {
