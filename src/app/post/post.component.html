@@ -8,9 +8,8 @@
                 <h4 class="postTitle">{{doc.title}}</h4>
                 <p class="postContent">{{doc.content}}</p>
                 <h4>{{doc.date}}</h4>
+                <button class="btn" (click)="deletePost(doc.id,doc.title)">Delete Post</button>
             </div>
-            
-            <button class="btn" (click)="deletePost(doc.id,doc.title)">Delete Post</button>
         </div>
     </div>
     <div id="model1" class="modal">
