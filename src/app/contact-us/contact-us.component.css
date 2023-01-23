@@ -1,12 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Arimo:wght@500&family=Inter:wght@500&family=Montserrat:wght@500&family=Open+Sans:wght@500&display=swap');
 
-/* *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-    font-family: 'Montserrat', sans-serif;
-} */
 .contactUs {
     background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
     height: 40vh;
@@ -17,14 +10,14 @@
     justify-content: center;
     align-items: center;
     position: relative;
-    top: 8rem;
+    top: 7rem;
+    width: fit-content;
+    margin: auto;
 }
 .sayHi p {
     /* border: 1px solid red; */
     width: 28rem;
     text-align: center;
-    position: relative;
-    top: 1rem;
 }
 .contactBox {
     background-color: white;
@@ -70,8 +63,8 @@
     justify-content: center;
 }
 form {
-    display: flex;
-    flex-direction: column;
+    /* display: flex;
+    flex-direction: column; */
 }
 form input {
     align-items: center;
@@ -88,5 +81,45 @@ form button {
     padding: 0.6rem;
     background-image: linear-gradient(135deg, #b2b2b2 0%, #c3cfe2 100%);
     cursor: pointer;
-    border-radius: 0.4rem;
+    /* border-radius: 0.4rem; */
+    margin-top: 7rem;
+    display: flex;
+    align-items: center;
 }
+form button a {
+    /* color: white; */
+    color: black;
+    font-weight: bold;
+}
+@media only screen and (max-width: 600px) {
+    .sayHi p {
+      font-size: 0.8rem;
+    }
+    .contactBox {
+        width: 90%;
+        margin: auto;
+        position: relative;
+        bottom: 6rem;
+        padding: 1rem;
+      }
+      .contactchild {
+        width: 90%;
+        margin: auto;
+      }
+      form input {
+        width: 80%;
+        margin: 0.3rem 0 0.3rem 0;
+      }
+      form button {
+        padding: 0.4rem;
+        margin-top: 7rem;
+      }
+      form button a {
+        font-size: 0.8rem;
+      }
+  }
+  @media(max-width: 456px) {
+    form button a {
+        font-size: 0.6rem;
+    }
+  }
