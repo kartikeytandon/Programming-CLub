@@ -20,6 +20,10 @@
 h3 {
     text-align: center;
 }
+.btn {
+    /* margin-left: 10rem; */
+    margin-right: 0rem;
+}
 
 @media(max-width: 824px) {
     .postWrapper {
