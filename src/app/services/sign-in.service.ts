@@ -34,7 +34,7 @@ export class SignInService {
     if(this.name && this.email){
       alert.close();
       this.toast.success('successfully logged in');
-      this.router.navigate(['home']);
+      this.router.navigate(['Post']);
     }   
     })
   }
